@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         textView = findViewById(R.id.textView);
         button = findViewById(R.id.button);
 
-        SharedPreferences sp = getSharedPreferences("myPref",MODE_PRIVATE);
+        SharedPreferences sp = getSharedPreferences("MyPref",MODE_PRIVATE);
         String editValue = sp.getString("name","Null");
         textView.setText(editValue);
 
@@ -33,9 +33,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String value = editText.getText().toString();
 
-                SharedPreferences sp = getSharedPreferences("myPref",MODE_PRIVATE);
+                SharedPreferences sp = getSharedPreferences("MyPref",MODE_PRIVATE);
                 SharedPreferences.Editor spe = sp.edit();
-                spe.putString("name","value");
+                spe.putString("name", value);
                 spe.apply();
                 textView.setText(value);
             }
